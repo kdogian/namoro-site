@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gian e Oséias 💙</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: #e6f0ff;
+      font-family: 'Arial', sans-serif;
+      color: #003366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+      background: #f0f8ff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #0055aa;
+      margin-bottom: 10px;
+    }
+
+    .subtitulo {
+      font-size: 1.2em;
+      color: #0077cc;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .photo img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .music-player {
+      margin-bottom: 20px;
+    }
+
+    .counter {
+      font-size: 1.1em;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .heart {
+      color: #1e90ff;
+      font-size: 1.5em;
+      margin-top: 10px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    @media screen and (max-height: 600px) {
+      .container {
+        scale: 0.9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💙 Gian e Oséias 💙</h1>
+    <div class="subtitulo">TE AMO</div>
+
+    <div class="photo">
+      <img src="sua-foto.jpg" alt="Nossa Foto" />
+    </div>
+
+    <div class="music-player">
+      <audio autoplay loop controls>
+        <source src="ce-topa.mp3" type="audio/mpeg" />
+        Seu navegador não suporta áudio.
+      </audio>
+    </div>
+
+    <div class="counter">
+      <div id="timer"></div>
+      <div class="heart">💙</div>
+    </div>
+  </div>
+
+  <script>
+    const startDate = new Date("2024-06-13T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("timer").innerHTML =
+        `Vivendo ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos incríveis ao seu lado 💙`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
+
